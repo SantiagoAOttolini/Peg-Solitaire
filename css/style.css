@@ -1,5 +1,32 @@
+.header{
+  display: flex;
+  justify-content: left;
+}
+.nav li a{
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: flex;
+}
+.nav li a:hover{
+  background-color: grey;
+}
+.nav li:hover > ul{ /*li inside of nav that are direct of ul*/
+  display: block;
+}
+.nav li ul li{
+ position: relative;
+
+}
+
+.nav li ul{
+  position: absolute;
+  display: none
+}
+
 .board {
-  margin-right: 50px;
+  margin: 55px;
   border-radius: 30px;
   display: flex;
   justify-content: left;
@@ -7,6 +34,7 @@
   flex-grow: 1;
   background-color: rgb(211, 160, 155);
   padding: 50px;
+  
 }
 .game {
   display: flex;
@@ -18,21 +46,38 @@
 .middle,
 .last {
   display: flex;
-
   justify-content: center;
   flex-grow: 1;
   background: rgb(177, 83, 83);
 }
+.first{
+  border-radius: 20px 0px 0px 20px;
+}
+.last{
+  border-radius: 0px 20px 20px 0px;
+}
 .middle {
   border-radius: 20px;
 }
+
 .first-part-list,
 .middle-part-list,
 .last-part-list {
   display: flex;
-
+  
   flex-direction: column;
   justify-content: center;
+}
+.middle-part-list{
+  margin-right: 40px;
+}
+.first-part-list
+{
+  margin-right: 10px;
+}
+.last-part-list{
+  margin-left: -20px;
+  margin-right: 35px;
 }
 .ball-place {
   list-style-type: none;
@@ -83,22 +128,5 @@ border-radius: 40px;
       border-radius: 45px;
     }
   }
-  /*@media (min-width: 1200px) {
-    .ball-place,
-    .ball-place-empty {
-      width: 55px;
-      height: 55px;
-      border-radius: 55px;
-    }
-  }
-  @media (min-width: 1920px) {
-    .ball-place,
-    .ball-place-empty {
-      
-      width: 65px;
-      height: 65px;
-      border-radius: 65px;
-    }
-   
-  }*/
+  
   
