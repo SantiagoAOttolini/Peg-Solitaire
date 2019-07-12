@@ -43,6 +43,7 @@
   padding-right: 20px;
 }
 .conteiner-description {
+  color: white;
   font-size: 25px;
   padding: 30px;
   text-align: center;
@@ -50,13 +51,41 @@
 #board {
   display: flex;
   justify-content: center;
+
 }
 
 .conteiner {
   height: 920px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(46, 197, 172);
+  background-color: rgb(35, 47, 98);
+}
+.conteinerMenu img{
+  position: fixed;
+  display: flex;
+  height: 70px;
+  width: 70px;
+  cursor:pointer;
+  z-index: 10;
+}
+
+nav li{
+  list-style: none;
+  font-size: 25px;
+  padding: 14px;
+  color: white;
+  cursor: pointer;
+}
+nav ul li:hover{
+  background: rgb(153, 144, 144);
+  transition: all 300ms;
+}
+.conteinerMenu nav{
+  position: fixed;
+  display: flex;
+  margin-top:5px; 
+  
+  
 }
 .conteinerMenu {
   position: absolute;
@@ -64,12 +93,8 @@
   flex-direction: row;
   justify-content: center;
   height: 920px;
-  width: 200px;
-  background-color: #0066;
-}
-.conteiner a {
-  font-size: 25px;
-  color: black;
+  width: 230px;
+  background-color: rgba(42, 97, 141, 0.4);
 }
 
 .ball-place {
