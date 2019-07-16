@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    background:url(../image/fondo.png);
+  }
+  p{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    font-size: 35px;
+    width: 750px;
+    height: 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  }
+  @media (max-width: 581px) {
+    p {
+      height: 400px;
+      }
+    }
+    @media (max-width: 426px) {
+      p {
+        height: 600px;
+        }
+      }
+    
+
+  
