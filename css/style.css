@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   justify-content: center;
   margin: 0;
-  background:url(../image/fondo.png);
+  background:url(../image/FONDO2.jpg);
 }
 
 .header{
@@ -28,7 +28,7 @@ body {
   
   
 }
-.conteiner-description {
+.container-description {
   display: flex;
   flex-shrink:1;
   margin-top: 20px;
@@ -46,7 +46,7 @@ body {
   margin-top: 50px;
 }
 
-.conteiner {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,14 +54,13 @@ body {
   right: 0vw;
   top: 0px;
   left: 250px;
-  
   flex-direction: column;
   
 }
 .sidebar
 {
   top: 0px;
-  position: absolute;
+  position: fixed;
   width: 250px;
   height: 970px;
   box-shadow: 0 5px 15px rgba(0,0,0,.5);
@@ -83,7 +82,7 @@ body {
   color: #fff;
   padding: 20px;
   text-decoration: none;
-  font:bold 25px;
+  
 }
 .sidebar ul{
   list-style: none;
@@ -172,7 +171,7 @@ footer{
     height: 80%;
   }
   
-  .conteiner {
+  .container {
     height: 100%;
     align-items: center;
   }
@@ -206,4 +205,11 @@ footer{
       border-radius:30px;
     }
   }
+  @media (max-width: 654px) {
+    .header-image {
+        top: 0;
+        height: 80px;
+        width: 230px;
+      }
+    }
   

@@ -37,6 +37,53 @@ var createId = function(rowN, colN) {
   return "ball-" + rowN + "-" + colN;
 };
 
+
+function ResetBoard(){
+  var NewBoard = [
+    [, , { value: 1 }, { value: 1 }, { value: 1 }, , ,],
+    [, , { value: 1 }, { value: 1 }, { value: 1 }, , ,],
+    [
+      { value: 1 },
+      { value: 1 },
+      { value: 1 },
+      { value: 1 },
+      { value: 1 },
+      { value: 1 },
+      { value: 1 }
+    ],
+    [
+      { value: 1 },
+      { value: 1 },
+      { value: 1 },
+      { value: 0 },
+      { value: 1 },
+      { value: 1 },
+      { value: 1 }
+    ],
+    [
+      { value: 1 },
+      { value: 1 },
+      { value: 1 },
+      { value: 1 },
+      { value: 1 },
+      { value: 1 },
+      { value: 1 }
+    ],
+    [, , { value: 1 }, { value: 1 }, { value: 1 }, , ,],
+    [, , { value: 1 }, { value: 1 }, { value: 1 }, , ,]
+  ];
+  
+  var boardID = document.getElementById("board");
+  boardID.innerHTML = generateBoard(NewBoard);
+
+  var a = boardID.getElementsByTagName("button");
+  addBallsEventHandlers(a);
+
+}
+
+
+ 
+
 var generateCell = function(cell, rowN, colN) {
   var html = '<button id="' + createId(rowN, colN) + '" class = "';
   if (cell && cell.value) {
@@ -85,13 +132,13 @@ var showSuggestions = function() {
   var near = {
     above: getElement(createId(selectedBall.x - 1, selectedBall.y)),
     left: getElement(createId(selectedBall.x, selectedBall.y - 1)),
-    right: getElement(createId(selectedBall.x - 1, selectedBall.y + 1)),
+    right: getElement(createId(selectedBall.x, selectedBall.y + 1)),
     below: getElement(createId(selectedBall.x + 1, selectedBall.y))
   };
   var possible = {
     above: getElement(createId(selectedBall.x - 2, selectedBall.y)),
     left: getElement(createId(selectedBall.x, selectedBall.y - 2)),
-    right: getElement(createId(selectedBall.x - 2, selectedBall.y + 2)),
+    right: getElement(createId(selectedBall.x , selectedBall.y + 2)),
     below: getElement(createId(selectedBall.x + 2, selectedBall.y))
   };
   if (
@@ -145,12 +192,19 @@ var addBallsEventHandlers = function(ball) {
     ball[i].onclick = selectBall;
   }
 };
+
 var init = function() {
+  ResetBoard();
   const boardElement = document.getElementById("board"); // get the board
   //Asign dynamicBoard
 
   boardElement.innerHTML = generateBoard();
   var ball = boardElement.getElementsByClassName("ball-place");
   addBallsEventHandlers(ball);
+  
+  var reset = document.getElementById("Reset") 
+  reset.onclick = ResetBoard();
 };
+
 window.onload = init;
+
