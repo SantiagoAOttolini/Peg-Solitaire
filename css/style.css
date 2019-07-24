@@ -5,7 +5,16 @@ body {
   margin: 0;
   background: url(../image/FONDO2.jpg);
 }
-
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0vw;
+  top: 0px;
+  left: 250px;
+  flex-direction: column;
+}
 .header {
   display: flex;
   justify-content: center;
@@ -19,12 +28,13 @@ body {
   align-items: center;
   margin-top: 15px;
 }
-
+/*IMAGE OF PEG*/
 .header-image {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+/*PEG SOLITAIRE DESCRIPTION*/
 .container-description {
   display: flex;
   flex-shrink: 1;
@@ -35,42 +45,8 @@ body {
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
-p.Score{
-  font-size: 40px;
-  color: white;
-  border: 2px solid #030107;
-  width: 245px;
-  box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
-  
-}
-p.Piece{
-  padding: 0px;
-  font-size: 40px;
-  color: white;
-  width: 245px;
-  border: 2px solid #030107;
-  box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
-  
-}
-#board {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-  
-}
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 0vw;
-  top: 0px;
-  left: 250px;
-  flex-direction: column;
-}
+/*MENU*/
 .sidebar {
   top: 0px;
   position: fixed;
@@ -110,7 +86,26 @@ p.Piece{
   background: #444;
   border-left: 5px solid #eee;
 }
+/*END MENU*/
 
+/*SCORE AND PIECES*/
+p#Score {
+  font-size: 40px;
+  color: white;
+  border: 2px solid #030107;
+  width: 245px;
+  box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
+}
+p#Piece {
+  padding: 0px;
+  font-size: 40px;
+  color: white;
+  width: 245px;
+  border: 2px solid #030107;
+  box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
+}
+
+/*END SCORE AND PIECES*/
 footer {
   margin-top: 590px;
   margin-left: 20px;
@@ -119,6 +114,14 @@ footer {
   font-size: 15px;
 }
 
+/*BOARD AND PIECES OF BOARD*/
+#board {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
 .ball-place {
   list-style-type: none;
   background-color: rgb(255, 253, 153);
@@ -129,7 +132,6 @@ footer {
   margin: 5px;
   box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
 }
-
 .ball-place-empty {
   list-style-type: none;
   background-color: rgb(255, 251, 251);
@@ -140,7 +142,6 @@ footer {
   border-radius: 20px;
   margin: 5px;
 }
-
 .selected {
   background-color: rgb(204, 46, 46);
   border: 2px solid #17202a;
@@ -150,7 +151,6 @@ footer {
   margin: 5px;
   box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
 }
-
 .suggestion {
   background-color: rgb(63, 193, 244);
   border: 2px solid #17202a;
@@ -169,6 +169,9 @@ footer {
   list-style-type: none;
   border: none;
 }
+/*END PIECES OF BOARD*/
+
+/*AJUST SIZE*/
 @media (max-width: 759px) {
   html {
     height: 100%;
@@ -176,7 +179,6 @@ footer {
   body {
     height: 80%;
   }
-
   .container {
     height: 100%;
     align-items: center;
@@ -184,7 +186,6 @@ footer {
   .header {
     width: 40%;
   }
-
   #board button {
     width: 30px;
     height: 30px;
@@ -216,3 +217,4 @@ footer {
     width: 230px;
   }
 }
+/*END AJUST SIZE*/
