@@ -9,17 +9,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   position: absolute;
   right: 0vw;
   top: 0px;
   left: 250px;
-  flex-direction: column;
-}
-.header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
 }
 .header-title {
   display: flex;
@@ -27,6 +21,13 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 /*IMAGE OF PEG*/
 .header-image {
@@ -37,6 +38,7 @@ body {
 /*PEG SOLITAIRE DESCRIPTION*/
 .container-description {
   display: flex;
+  justify-content: center;
   flex-shrink: 1;
   margin-top: 20px;
   color: white;
@@ -77,7 +79,6 @@ body {
 }
 .sidebar li {
   font-size: 20px;
-
   outline: 1px solid #2a2a2a; /*geretae the line, but the line no generate a space in the box*/
   transition-property: border; /*is the same that transition: border 0.3s*/
   transition-duration: 0.3s;
@@ -86,28 +87,44 @@ body {
   background: #444;
   border-left: 5px solid #eee;
 }
+#nameTxt {
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 170px;
+  height: 20px;
+}
+#btnSaveGame {
+  width: 50px;
+  height: 27px;
+}
+h2#TitlePlayer {
+  margin-top: 50px;
+}
 /*END MENU*/
 
 /*SCORE AND PIECES*/
 p#Score {
   font-size: 40px;
   color: white;
+  text-align: center;
   border: 2px solid #030107;
-  width: 245px;
+  width: 228px;
   box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
 }
 p#Piece {
   padding: 0px;
   font-size: 40px;
+  text-align: center;
   color: white;
-  width: 245px;
+  width: 228px;
   border: 2px solid #030107;
   box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
 }
 
 /*END SCORE AND PIECES*/
 footer {
-  margin-top: 590px;
+  margin-top: 310px;
   margin-left: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: underline;
@@ -206,15 +223,43 @@ footer {
   #board button {
     width: 15px;
     height: 15px;
-    margin: 5px;
+    margin: 3px;
     border-radius: 30px;
   }
+  p#Score{
+    width: 100px;
+    font-size: 20px;
+  }
+  p#Piece{
+    width: 100px;
+    font-size: 20px;
+  }
 }
+@media (max-width: 480px) {
+  .container-description{
+    margin-left: 20px;
+  }
+  .container{
+    margin-top: 100px;
+  }
+  
+  #board button {
+    height: 15px;
+    margin: 2px;
+    border-radius: 15px;
+  }
+  .header-image {
+    margin-left:20px;
+  }
+  footer{
+    margin-top: 270px;
+  }
+}
+
 @media (max-width: 654px) {
   .header-image {
-    top: 0;
-    height: 80px;
-    width: 230px;
+    height: 60px;
+    width: 150px;
   }
 }
 /*END AJUST SIZE*/

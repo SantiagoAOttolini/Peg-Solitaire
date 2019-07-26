@@ -4,25 +4,16 @@ body {
     background:url(../image/FONDO2.jpg);
   }
   p{
-    display: flex;
-    justify-content: center;
-    margin-top: 150px;
-    color: #fff;
     font-size: 35px;
-    width: 750px;
-    height: 300px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    color: #fff;
+    line-height: 50px;
+    position: relative;
+    width: 650px;
+    margin: auto;
+    margin-top:30px;
+    padding: 20px;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
   }
-  @media (max-width: 581px) {
-    p {
-      height: 400px;
-      }
-    }
-    @media (max-width: 426px) {
-      p {
-        height: 600px;
-        }
-      }
-    
+  
 
   

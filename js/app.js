@@ -71,7 +71,9 @@ var score = 0;
 var selectedBall = { x: undefined, y: undefined };
 var suggestions = [];
 
+
 //Create an id for a peg
+//Ej: ball-5-6, position in the row is 5 and position in the column is 6
 var createId = function(rowN, colN) {
   return "ball-" + rowN + "-" + colN;
 };
@@ -87,10 +89,10 @@ var getPositionFromId = function(id) {
   }
   return {};
 };
-
+//cell is the ball
+//collN is the position of the column
 //Generate all of the cells in one row
 var generateCell = function(cell, rowN, colN) {
-
   //id = location of the peg
   var html = '<button id="' + createId(rowN, colN) + '" class = "';
   if (cell && cell.value) {
@@ -103,7 +105,8 @@ var generateCell = function(cell, rowN, colN) {
   html += '"></button>';
   return html;
 };
-
+//row is all array
+//rowN is the position of the row
 //Generate the row
 var generateRow = function(row, rowN) {
   var html = '<div class="row">';
@@ -118,7 +121,6 @@ var generateRow = function(row, rowN) {
 var generateBoard = function() {
   var html = '<div class="row">';
   for (let i = 0; i < board.length; i++) {
-
     //create the rows
     html += generateRow(board[i], i);
   }

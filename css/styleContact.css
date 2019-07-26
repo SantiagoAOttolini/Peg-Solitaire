@@ -1,24 +1,56 @@
 body {
-  display: flex;
-  justify-content: center;
+  margin: 0px;
   background:url(../image/FONDO2.jpg);
 }
-#Email{
-  display: flex;
-  justify-content: center;
-  font-size: 35px;
-  width: 650px;
-  height: 70px;
-  margin-top: 150px;
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+h1{
+  font-size: 50px;
+  text-align:center;
+  margin-top: 0px;
 }
-#Phone{
+.Form{
+  position: relative;
+  width: 500px;
+  max-width: 100%;
+  margin: auto;
+  margin-top:30px;
+  padding: 20px;
+  box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+  
+}
+
+.form-label, .form-input, .form-send{
   display: flex;
+  width: 92%;
+  font-size: 1.3em;
+}
+.form-send{
+  width: 100%;
+  
+}
+.form-input{
+  padding: 20px;
+  margin-bottom: 40px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  color: white;
+  
+}
+.form-input:focus{
+  outline: 1px solid rgba(0,0,0,0.7);
+}
+.from-label{
+  padding-left: 15px;
+  
+}
+.form-inputM{
+  height: 100px;
+}
+.form-send{
+  background: rgba(0,0,0,0.7);
+  color: white;
   justify-content: center;
-  font-size: 35px;
-  color: #fff;
-  width: 650px;
-  height: 70px;
-  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+
 }
