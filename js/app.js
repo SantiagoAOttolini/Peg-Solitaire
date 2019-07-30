@@ -1,3 +1,4 @@
+//#region Global variables
 var board  = [
   [
     undefined,
@@ -63,21 +64,18 @@ var board  = [
     undefined
   ]
 ];
-//Global variables
 var piece = 32;
 var score = 0;
-
 //Functional of the game
 var selectedBall = { x: undefined, y: undefined };
 var suggestions = [];
-
-
+//#endregion
+//#region Functions
 //Create an id for a peg
 //Ej: ball-5-6, position in the row is 5 and position in the column is 6
 var createId = function(rowN, colN) {
   return "ball-" + rowN + "-" + colN;
 };
-
 //Get the position of the peg
 var getPositionFromId = function(id) {
   var idParts = id && id.length ? id.split("-") : [];
@@ -89,6 +87,13 @@ var getPositionFromId = function(id) {
   }
   return {};
 };
+//Return a specify element
+var getElement = function(id) {
+  var element = document.getElementById(id);
+  return element || {};
+};
+//#endregion
+//#region Create row, cell, col
 //cell is the ball
 //collN is the position of the column
 //Generate all of the cells in one row
@@ -127,7 +132,8 @@ var generateBoard = function() {
   html += "</div>";
   return html;
 };
-
+//#endregion
+//#region Actions
 //Remove selection of the peg
 var unselectedBall = function() {
   if (selectedBall.x !== undefined && selectedBall.y !== undefined) {
@@ -139,14 +145,27 @@ var unselectedBall = function() {
     }
   }
 };
-
-//Return a specify element
-var getElement = function(id) {
-  var element = document.getElementById(id);
-  return element || {};
+var selectBall = function(evt) {
+  suggestions = [];
+  var ball = evt.target;
+  var idParts = ball.id && ball.id.length ? ball.id.split("-") : [];
+  if (idParts.length === 3) {
+    unselectedBall();
+    if (
+      selectedBall.x === parseInt(idParts[1]) &&
+      selectedBall === parseInt(idParts[2])
+    ) {
+      unselectedBall();
+      selectedBall.x = undefined;
+      selectedBall.y = undefined;
+    } else {
+      selectedBall.x = parseInt(idParts[1]);
+      selectedBall.y = parseInt(idParts[2]);
+      ball.className = "selected";
+      showSuggestions();
+    }
+  }
 };
-
-//Show the  suggestions in all directions
 var showSuggestions = function() {
   var near = {
     above: getElement(createId(selectedBall.x - 1, selectedBall.y)),
@@ -189,36 +208,6 @@ var showSuggestions = function() {
     suggestions.push(possible.right.id);
   }
 };
-
-var selectBall = function(evt) {
-  suggestions = [];
-  var ball = evt.target;
-  var idParts = ball.id && ball.id.length ? ball.id.split("-") : [];
-  if (idParts.length === 3) {
-    unselectedBall();
-    if (
-      selectedBall.x === parseInt(idParts[1]) &&
-      selectedBall === parseInt(idParts[2])
-    ) {
-      unselectedBall();
-      selectedBall.x = undefined;
-      selectedBall.y = undefined;
-    } else {
-      selectedBall.x = parseInt(idParts[1]);
-      selectedBall.y = parseInt(idParts[2]);
-      ball.className = "selected";
-      showSuggestions();
-    }
-  }
-  
-};
-
-var addBallsEventHandlers = function(ball) {
-  for (let i = 0; i < ball.length; i++) {
-    ball[i].onclick = selectBall;
-  }
-};
-
 var moveBall = function(evt) {
   var id = evt.target.id; //Target is the element that we clicked on
   var pos = getPositionFromId(id);
@@ -238,17 +227,18 @@ var moveBall = function(evt) {
 
       piece -= 1;
       score += 10;
+
+      //popup
+      if(score == 310){
+        var popup = document.getElementById('Win')
+        if(popup.className == 'popupInactive'){
+          popup.className = 'popupActive';
+        };
+      }
       init();
     }
   }
 };
-
-var addBallsPlaceEmptyEventHandlers = function(ballPlaceEmpty) {
-  for (let i = 0; i < ballPlaceEmpty.length; i++) {
-    ballPlaceEmpty[i].onclick = moveBall;
-  }
-};
-
 //Reset the board
 var ResetBoard = function() {
   board  = [
@@ -323,6 +313,7 @@ var ResetBoard = function() {
   init();
 }
 
+
 //Save
 var set = function(){
 // Local storage can't save the array so have tranform the array to string
@@ -341,7 +332,20 @@ score=JSON.parse(localStorage.getItem('SaveScore'));
 
 init();
 }
-
+//#endregion
+//#region Handlers
+var addBallsEventHandlers = function(ball) {
+  for (let i = 0; i < ball.length; i++) {
+    ball[i].onclick = selectBall;
+  }
+};
+var addBallsPlaceEmptyEventHandlers = function(ballPlaceEmpty) {
+  for (let i = 0; i < ballPlaceEmpty.length; i++) {
+    ballPlaceEmpty[i].onclick = moveBall;
+  }
+};
+//#endregion
+//#region INIT
 //Initialize game
 var init = function() {
   // get the board
@@ -362,7 +366,6 @@ var init = function() {
   document.getElementById("Load").onclick = get;
   document.getElementById("SaveGame").onclick = set;
   document.getElementById("Reset");
-  
-
 }
 window.onload = init;
+//#endregion

@@ -43,20 +43,12 @@ q:before, q:after {
 	content: '';
 	content: none;
 }
-
-/* remember to define visible focus styles! 
-:focus {
-outline: ?????;
-} */
-
-/* remember to highlight inserts somehow! */
 ins {
 	text-decoration: none;
 }
 del {
 	text-decoration: line-through;
 }
-
 table {
 	border-collapse: collapse;
 	border-spacing: 0;

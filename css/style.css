@@ -1,45 +1,41 @@
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: 0;
   background: url(../image/FONDO2.jpg);
 }
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   position: absolute;
   right: 0vw;
   top: 0px;
   left: 250px;
 }
 .header-title {
-  display: flex;
-  flex-shrink: 1;
-  justify-content: center;
-  align-items: center;
   margin-top: 15px;
 }
-
-.header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+.popupInactive{
+  position: absolute;
+  visibility: hidden;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 0px;
 }
-/*IMAGE OF PEG*/
-.header-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.popupActive{
+    position: absolute;
+    visibility: visible;
+    top: 380px;
+    margin-top:330px;
+    margin-left: 6px;
+    width: 230px;
+    height: 150px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgba(192, 139, 14, 0.5);
+    box-shadow: 0 0 20px 1px rgba(182, 127, 40, 0.3);
+    border: 3px dashed #000;
 }
 /*PEG SOLITAIRE DESCRIPTION*/
 .container-description {
-  display: flex;
-  justify-content: center;
-  flex-shrink: 1;
   margin-top: 20px;
   color: white;
   font-size: 25px;
@@ -47,7 +43,6 @@ body {
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
-
 /*MENU*/
 .sidebar {
   top: 0px;
@@ -102,7 +97,6 @@ h2#TitlePlayer {
   margin-top: 50px;
 }
 /*END MENU*/
-
 /*SCORE AND PIECES*/
 p#Score {
   font-size: 40px;
@@ -121,7 +115,6 @@ p#Piece {
   border: 2px solid #030107;
   box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
 }
-
 /*END SCORE AND PIECES*/
 footer {
   margin-top: 310px;
@@ -130,13 +123,8 @@ footer {
   text-decoration: underline;
   font-size: 15px;
 }
-
 /*BOARD AND PIECES OF BOARD*/
 #board {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
   margin-top: 50px;
 }
 .ball-place {
@@ -187,7 +175,6 @@ footer {
   border: none;
 }
 /*END PIECES OF BOARD*/
-
 /*AJUST SIZE*/
 @media (max-width: 759px) {
   html {
@@ -210,7 +197,6 @@ footer {
     border-radius: 30px;
   }
 }
-
 @media (max-width: 620px) {
   #board button {
     width: 20px;
@@ -226,36 +212,35 @@ footer {
     margin: 3px;
     border-radius: 30px;
   }
-  p#Score{
+  p#Score {
     width: 100px;
     font-size: 20px;
   }
-  p#Piece{
+  p#Piece {
     width: 100px;
     font-size: 20px;
   }
 }
 @media (max-width: 480px) {
-  .container-description{
+  .container-description {
     margin-left: 20px;
   }
-  .container{
+  .container {
     margin-top: 100px;
   }
-  
+
   #board button {
     height: 15px;
     margin: 2px;
     border-radius: 15px;
   }
   .header-image {
-    margin-left:20px;
+    margin-left: 20px;
   }
-  footer{
+  footer {
     margin-top: 270px;
   }
 }
-
 @media (max-width: 654px) {
   .header-image {
     height: 60px;
