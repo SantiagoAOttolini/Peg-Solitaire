@@ -298,13 +298,13 @@ var moveBall = function(evt) {
       var popup = document.getElementById("win");
       if (popup.className == "popup-inactive") {
         popup.className = "popup-active";
-        showRankingDiv(true, "You score" + "" + score);
+        showPlayerRank(true, "Score:" + " " + "" + score);
       }
     } else {
       var popup = document.getElementById("loose");
       if (popup.className == "popup-inactive") {
         popup.className = "popup-active";
-        showRankingDiv(true, "You score" + "" + score);
+        showPlayerRank(true, "Score:" + " " + "" + score);
       }
     }
   }
@@ -381,6 +381,7 @@ var ResetBoard = function() {
   score = 0;
   selectedBall = { x: undefined, y: undefined };
   suggestions = [];
+  showPlayerRank(false);
   var popup = document.getElementById("loose");
   if (popup.className == "popup-active") {
     popup.className = "popup-inactive";
@@ -436,6 +437,159 @@ function closeMenu() {
   }
 }
 //#endregion
+//#region Ranking
+// Show Higscores and names
+// HighScores
+var showPlayers = function() {
+  var playersRank = getElement("players");
+  playersRank.className = "diplay-block";
+  var header = getElement("players-rank-header");
+  header.innerText = "The best players...";
+  var dataPlayer = getElement("data-player");
+  dataPlayer.className = "display-none";
+  var userRank = getElement("user-rank");
+  userRank.className = "display-block";
+  var btnClose = getElement("close-rank-button");
+  btnClose.onclick = closePlayerRank;
+  userRank.innerHTML = playerScore();
+};
+var closePlayerRank = function() {
+  var playersRank = getElement("players");
+  playersRank.className = "display-none";
+  var listUsers = getElement("user-rank");
+  listUsers.className = "display-none";
+};
+
+//Function to get date
+function getDate() {
+  var date = new Date();
+  var yyyy = date.getFullYear();
+  var dd = date.getDate();
+  var mm = date.getMonth() + 1;
+  //Puts the 0 for the numbers below 2 digits
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+  var currentDay = yyyy + "-" + mm + "-" + dd;
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
+  //Puts the 0 for the numbers below 2 digits
+  if (hours < 10) {
+    hours = "0" + hours;
+  }
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  return currentDay;
+}
+
+//Saving players skills
+var saveScore = function(name) {
+  var points = score;
+  var dateToday = getDate();
+  //validations
+  if (name == "") {
+    alert("You must enter the name");
+    return {};
+  }
+  if (name.length < 3) {
+    alert("The name must have more than 3 characters");
+    return {};
+  }
+  if (name.length > 12) {
+    alert("the name must have less than 12 characters");
+    return {};
+  }
+  //Creating an array which will contain: username, points in game and date
+  if (!localStorage.getItem("playerRank")) {
+    localStorage.setItem("playerRank", "[]");
+  }
+  var playerRank = JSON.parse(localStorage.getItem("playerRank"));
+  playerRank.push({
+    date: dateToday.toString(),
+    name: name,
+    points: points
+  });
+  if (playerRank.length > 15) {
+    playerRank.length = 15;
+  }
+  localStorage.setItem("playerRank", JSON.stringify(playerRank));
+};
+
+var playerScore = function() {
+  //Getting the array wich will represent the ranking of players
+  localStorage.getItem("playerRank");
+  var playerRank = JSON.parse(localStorage.getItem("playerRank"));
+
+  playerRank.sort(function(a, b) {
+    if (a.points > b.points) {
+      return -1;
+    }
+    if (a.points < b.points) {
+      return 1;
+    }
+    return 0;
+  });
+
+  var listHTML = "<ul>";
+  for (let i = 0; i < playerRank.length; i++) {
+    listHTML +=
+      "<li> " +
+      (i + 1) +
+      "." +
+      "[" +
+      playerRank[i].date +
+      "]" +
+      "   " +
+      playerRank[i].name +
+      "   " +
+      playerRank[i].points +
+      " </li>";
+  }
+  listHTML += "</ul>";
+  return listHTML;
+};
+//Show and hide divs and put the players scores in the ranking
+var formEvents = function(evt) {
+  var name = document.getElementById("name");
+  saveScore(name.value);
+  var header = getElement("ranking-header");
+  header.innerText = "RANKING";
+  var dataPlayer = getElement("data-player");
+  dataPlayer.className = "display-none";
+  var userRank = document.getElementById("user-rank");
+  userRank.className = "display-block";
+  document.getElementById("name").value = "";
+  userRank.innerHTML = playerScore();
+};
+
+//Show and hide divs
+var showPlayerRank = function(bool, message = "") {
+  var btnClose = getElement("close-rank-button");
+  btnClose.onclick = closePlayerRank;
+  var playersRank = getElement("players");
+  var dataPlayer = getElement("user-data");
+
+  var header = getElement("players-rank-header");
+  header.innerText = message;
+  if (bool) {
+    dataPlayer.className = "display-block";
+    playersRank.className = "display-block";
+    var submit = document.getElementById("submit");
+    submit.onclick = formEvents;
+  } else {
+    playersRank.className = "display-none";
+  }
+};
+
+//#endregion
 //#region INIT
 //Initialize game
 var init = function() {
@@ -458,8 +612,8 @@ var init = function() {
   document.getElementById("button-close").onclick = closeMenu;
   document.getElementById("button-show").onclick = showMenu;
   document.getElementById("save-game").onclick = set;
+  document.getElementById("high-score").onclick = showPlayers;
   document.getElementById("reset");
-  
 };
 window.onload = init;
 //#endregion

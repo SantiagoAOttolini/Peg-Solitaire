@@ -19,9 +19,7 @@ h1 {
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
 }
 
-.form-label,
-.form-input,
-.form-send {
+.form-label, .form-input, .form-send {
     display: flex;
     width: 92%;
     font-size: 1.3em;
@@ -58,4 +56,18 @@ h1 {
     color: white;
     cursor: pointer;
     border: none;
+}
+
+@media (max-width: 250px) {
+    .form-label, .form-input, .form-send {
+        display: flex;
+        width: 180px;
+        font-size: 1.3em;
+    }
+    #button-sumbit {
+        width: 220px;
+    }
+    h1 {
+        font-size: 30px;
+    }
 }
