@@ -7,7 +7,6 @@ body {
 }
 
 .container {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,8 +35,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 230px;
 }
-
 
 /*PEG SOLITAIRE DESCRIPTION*/
 
@@ -60,7 +59,6 @@ body {
     align-items: center;
     margin-top: 50px;
 }
-
 
 /*SCORE AND PIECES*/
 
@@ -97,30 +95,42 @@ p#piece {
 .popup-active {
     position: absolute;
     visibility: visible;
-    margin-top: 40px;
-    width: 250px;
-    height: 100px;
     border: 3px dashed #000;
+    border-radius: 10%;
     color: blue;
     text-align: center;
-    font-size: 15px;
-    background-color: rgba(189, 33, 33, 0.8);
+    background-color: rgba(92, 51, 51, 0.9);
     box-shadow: 0 0 20px 1px rgba(182, 127, 40, 0.3);
 }
 
 span {
-    font-size: 30px;
+    font-size: 80px;
 }
 
 h1 {
     font-size: 40px;
 }
 
+#button-show, #button-close {
+    display: flex;
+    justify-content: center;
+    border-radius: 5%;
+    width: 150px;
+    padding: 10px;
+    margin-top: 20px;
+    opacity: 0.9;
+    border: 2px solid red;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgba(153, 48, 48, 0.8);
+    font-size: 20px;
+}
 
 /*MENU*/
 
-.sidebar {
+#sidebar {
     position: fixed;
+    visibility: hidden;
     top: 0px;
     width: 200px;
     height: 970px;
@@ -131,7 +141,7 @@ h1 {
     opacity: 0.8;
 }
 
-.sidebar h2 {
+#sidebar h2 {
     margin: 0;
     padding: 10px;
     text-align: center;
@@ -139,19 +149,19 @@ h1 {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.sidebar a {
+#sidebar a {
     display: block;
     padding: 20px;
     color: #fff;
     text-decoration: none;
 }
 
-.sidebar ul {
+#sidebar ul {
     padding: 0px;
     list-style: none;
 }
 
-.sidebar li {
+#sidebar li {
     font-size: 20px;
     /*geretae the line, but the line no generate a space in the box*/
     outline: 1px solid #2a2a2a;
@@ -160,7 +170,7 @@ h1 {
     transition-duration: 0.3s;
 }
 
-.sidebar li:hover {
+#sidebar li:hover {
     background: #444;
     border-left: 5px solid #eee;
 }
@@ -181,7 +191,6 @@ h1 {
 h2#title-player {
     margin-top: 50px;
 }
-
 
 /*BOARD AND PIECES OF BOARD*/
 
