@@ -111,10 +111,10 @@ h1 {
     font-size: 40px;
 }
 
-#button-show, #button-close {
+#button-show{
     display: flex;
     justify-content: center;
-    border-radius: 5%;
+    border-radius: 20px 20px 20px 20px;
     width: 150px;
     padding: 10px;
     margin-top: 20px;
@@ -125,7 +125,9 @@ h1 {
     background-color: rgba(153, 48, 48, 0.8);
     font-size: 20px;
 }
-
+#button-close{
+  font-family: cursive;
+}
 /*MENU*/
 
 #sidebar {
@@ -154,6 +156,7 @@ h1 {
     padding: 20px;
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
 }
 
 #sidebar ul {
@@ -174,24 +177,6 @@ h1 {
     background: #444;
     border-left: 5px solid #eee;
 }
-
-#name-txt {
-    margin-left: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 120px;
-    height: 20px;
-}
-
-#btn-save-game {
-    width: 50px;
-    height: 27px;
-}
-
-h2#title-player {
-    margin-top: 50px;
-}
-
 /*BOARD AND PIECES OF BOARD*/
 
 .ball-place {
