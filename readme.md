@@ -1,6 +1,6 @@
 # Peg Solitaire
 Final proyect for the matter "LPPA 2019" at UAI.
-#Professor
+# Professor
 [David Curras](https://github.com/davidcurras)
 ## Play
-For play click in this link [Play](https://github.com/SantiagoAOttolini/Peg-Solitaire/)
+For play click in this link [Play](https://santiagoaottolini.github.io/Peg-Solitaire/)
