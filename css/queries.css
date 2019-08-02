@@ -9,9 +9,7 @@
         width: 240px;
         height: 65px;
     }
-    .container-description {
-        width: 300px;
-    }
+
     p#score {
         width: 190px;
         font-size: 30px;
@@ -32,13 +30,7 @@
         margin: 6px;
         border-radius: 30px;
     }
-    .header-image {
-        width: 220px;
-        height: 60px;
-    }
-    .container-description {
-        width: 300px;
-    }
+
     p#score {
         width: 170px;
         font-size: 25px;
@@ -100,11 +92,6 @@
         margin: 6px;
         border-radius: 30px;
     }
-    .container-description {
-        height: 80px;
-        width: 210px;
-        font-size: 20px;
-    }
     #players {
         margin-left: -55px;
         width: 200px;
@@ -122,13 +109,5 @@
         height: 23px;
         margin: 6px;
         border-radius: 30px;
-    }
-    .container-description {
-        width: 200px;
-        font-size: 20px;
-        margin-right: 180px;
-    }
-    .header-image {
-        margin-right: 30px;
-    }
+    }   
 }
