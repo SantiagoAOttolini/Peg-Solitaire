@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -9,60 +9,62 @@
     <link rel="stylesheet" href="css/reset.css" />
     <script src="js/app.js"></script>
     <title>Peg Solitaire</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <div class="header-title">
-                <img src="image/PS.png" alt="" class="header-image" />
-            </div>
-            <div class="container-description">
-                <p>
-                    Peg solitaire it is an abstract solitaire board game made in Madagascar.
-                </p>
-            </div>
+      <div class="header">
+        <div class="header-title">
+          <img src="assets/header.png" alt="" class="header-image" />
         </div>
-        <div id="board"></div>
-        <p id="score">Score:</p>
-        <p id="piece">Piece:</p>
-        <input type="button" value="Show menu" id="button-show">
-        <div id="players" class="display-none">
-            <div class="close-rank-of-players">
-                <button id="close-rank-button">X</button>
-            </div>
-            <!--POPUP-->
-            <div id="win" class="popup-inactive">
-                <span>You are the winner!</span>
-            </div>
-            <div id="loose" class="popup-inactive">
-                <span>You lost the game.</span>
-            </div>
-            <h3 id="players-rank-header"></h3>
-            <div id="data-player" class="display-block">
-                <form class="display-block">
-                    <label id="user-name" for="username">User:</label>
-                    <input id="name" type="text">
-                </form>
-                <button id="submit">Save</button>
-            </div>
-            <div id="user-rank" class="display-none">
-            </div>
+        <div class="container-description">
+          <p>
+            Peg solitaire it is an abstract solitaire board game made in
+            Madagascar.
+          </p>
         </div>
+      </div>
+      <div id="board"></div>
+      <p id="score">Score:</p>
+      <p id="piece">Piece:</p>
+      <input type="button" value="Show menu" id="button-show" />
+      <div id="players" class="display-none">
+        <div class="close-rank-of-players">
+          <button id="close-rank-button">X</button>
+        </div>
+        <!--POPUP-->
+        <div id="win" class="popup-inactive">
+          <span>You are the winner!</span>
+        </div>
+        <div id="loose" class="popup-inactive">
+          <span>You lost the game.</span>
+        </div>
+        <h3 id="players-rank-header"></h3>
+        <div id="data-player" class="display-block">
+          <form class="display-block">
+            <label id="user-name" for="username">User:</label>
+            <input id="name" type="text" />
+          </form>
+          <button id="submit">Save</button>
+        </div>
+        <div id="user-rank" class="display-none"></div>
+      </div>
     </div>
     <div id="sidebar">
-        <h2>MENU</h2>
-        <ul>
-            <!--MENU-->
-            <li><a href="about.html">About us</a></li>
-            <li><a href="contact-us.html">Contact</a></li>
-            <li><a href="instruction.html">Instructions</a></li>
-            <li><a href="https://github.com/SantiagoAOttolini/Peg-Solitaire">Link Github</a></li>
-            <li><a id="reset">Reset</a></li>
-            <li><a id="load">Load</a></li>
-            <li><a id="high-score">High score</a></li>
-            <li><a id="save-game">Save game</a></li>
-            <li><a id="button-close">Close menu</a></li>
-        </ul>
+      <h2>MENU</h2>
+      <ul>
+        <!--MENU-->
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact-us.html">Contact</a></li>
+        <li><a href="instruction.html">Instructions</a></li>
+        <li>
+          <a href="https://github.com/SantiagoAOttolini/Peg-Solitaire">Link Github</a> 
+        </li>
+        <li><a id="reset">Reset</a></li>
+        <li><a id="load">Load</a></li>
+        <li><a id="high-score">High score</a></li>
+        <li><a id="save-game">Save game</a></li>
+        <li><a id="button-close">Close menu</a></li>
+      </ul>
     </div>
-</body>
+  </body>
 </html>

@@ -1,12 +1,12 @@
 body {
     margin: 0px;
-    background: url(../image/FONDO2.jpg);
+    background: url(../assets/wallpaper.jpg);
 }
 
 h1 {
-    font-size: 50px;
-    text-align: center;
     margin-top: 0px;
+    text-align: center;
+    font-size: 50px;
 }
 
 .Form {

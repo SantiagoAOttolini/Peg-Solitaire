@@ -9,7 +9,6 @@
         width: 240px;
         height: 65px;
     }
-
     p#score {
         width: 190px;
         font-size: 30px;
@@ -30,7 +29,6 @@
         margin: 6px;
         border-radius: 30px;
     }
-
     p#score {
         width: 170px;
         font-size: 25px;
@@ -109,5 +107,5 @@
         height: 23px;
         margin: 6px;
         border-radius: 30px;
-    }   
+    }
 }

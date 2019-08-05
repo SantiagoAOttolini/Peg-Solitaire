@@ -1,5 +1,5 @@
 body {
-    background: url(../image/FONDO2.jpg);
+    background: url(../assets/wallpaper.jpg);
 }
 
 .container {
@@ -34,17 +34,16 @@ body {
     align-items: center;
 }
 
-
 /*PEG SOLITAIRE DESCRIPTION*/
 
 .container-description {
     margin: auto;
     padding: 15px;
     margin-top: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    color: white;
-    font-size: 25px;
     text-align: center;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    font-size: 25px;
 }
 
 #board {
@@ -56,19 +55,18 @@ body {
     margin-top: 20px;
 }
 
-
 /*SCORE AND PIECES*/
 
 p#score {
     flex-grow: 0;
     width: 228px;
-    border: 2px solid #030107;
     margin-top: 30px;
-    box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
-    font-size: 40px;
-    color: white;
+    border: 2px solid #030107;
     text-align: center;
+    box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
+    color: white;
     background-color: rgba(20, 130, 158, 0.5);
+    font-size: 40px;
 }
 
 p#piece {
@@ -76,29 +74,29 @@ p#piece {
     padding: 0px;
     width: 228px;
     margin-top: 10px;
+    text-align: center;
     border: 2px solid #030107;
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
-    font-size: 40px;
-    text-align: center;
     color: white;
     background-color: rgba(20, 130, 158, 0.5);
+    font-size: 40px;
 }
 
 #button-show {
     display: flex;
     justify-content: center;
     flex-grow: 0;
-    border-radius: 20px 20px 20px 20px;
     width: 250px;
     padding: 10px;
     margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px 20px 20px 20px;
+    cursor: pointer;
     opacity: 0.9;
     border: 2px solid red;
     color: #fff;
-    cursor: pointer;
     background-color: rgba(153, 48, 48, 0.8);
     font-size: 20px;
-    margin-bottom: 20px;
 }
 
 #players {
@@ -115,11 +113,11 @@ p#piece {
 }
 
 #close-rank-button {
+    padding: 2px 20px 2px 20px;
+    text-align: right;
     color: rgb(255, 255, 255);
     background-color: rgba(15, 12, 5, 0.5);
     border-radius: 20px 20px 20px 20px;
-    padding: 2px 20px 2px 20px;
-    text-align: right;
 }
 
 .popup-inactive {
@@ -146,20 +144,20 @@ p#piece {
 
 #user-rank {
     height: 500px;
+    margin-top: 10px;
     background-color: rgba(163, 78, 22, 0.5);
     border-radius: 20px 20px 20px 20px;
-    margin-top: 10px;
     border: 2px solid #271801;
 }
 
 #submit {
     width: 60%;
     margin: 5px;
-    background-color: rgba(15, 12, 5, 0.5);
-    border-radius: 20px 20px 20px 20px;
     padding: 5px;
     border: 0px;
     color: #fff;
+    background-color: rgba(15, 12, 5, 0.5);
+    border-radius: 20px 20px 20px 20px;
 }
 
 #user-rank ul {
@@ -168,8 +166,8 @@ p#piece {
 
 #user-rank ul li {
     padding: 5px;
-    color: #fff;
     margin-left: 0px;
+    color: #fff;
     font-size: 15px;
     font-weight: bold;
 }
@@ -182,7 +180,6 @@ p#piece {
     margin-top: 50px;
     background-color: black;
 }
-
 
 /*MENU*/
 
@@ -233,7 +230,6 @@ p#piece {
     background: #444;
     border-left: 5px solid #eee;
 }
-
 
 /*BOARD AND PIECES OF BOARD*/
 
