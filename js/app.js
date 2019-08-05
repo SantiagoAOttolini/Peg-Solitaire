@@ -292,7 +292,6 @@ var moveBall = function(evt) {
       init();
     }
   }
-  console.log(allSuggestions);
   if (checkResult()) {
     if (score == 310) {
       var popup = document.getElementById("win");
