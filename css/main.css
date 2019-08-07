@@ -63,10 +63,10 @@ p#score {
     margin-top: 30px;
     border: 2px solid #030107;
     text-align: center;
-    box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
     color: white;
     background-color: rgba(20, 130, 158, 0.5);
     font-size: 40px;
+    box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
 }
 
 p#piece {
@@ -76,10 +76,10 @@ p#piece {
     margin-top: 10px;
     text-align: center;
     border: 2px solid #030107;
-    box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
     color: white;
     background-color: rgba(20, 130, 158, 0.5);
     font-size: 40px;
+    box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
 }
 
 #button-show {
@@ -91,11 +91,11 @@ p#piece {
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 20px 20px 20px 20px;
-    cursor: pointer;
-    opacity: 0.9;
     border: 2px solid red;
     color: #fff;
     background-color: rgba(153, 48, 48, 0.8);
+    cursor: pointer;
+    opacity: 0.9;
     font-size: 20px;
 }
 
@@ -155,9 +155,9 @@ p#piece {
     margin: 5px;
     padding: 5px;
     border: 0px;
-    color: #fff;
     background-color: rgba(15, 12, 5, 0.5);
     border-radius: 20px 20px 20px 20px;
+    color: #fff;
 }
 
 #user-rank ul {
@@ -190,18 +190,19 @@ p#piece {
     width: 200px;
     height: 970px;
     outline: 1px solid #2a2a2a;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     background: #333;
     color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     opacity: 0.8;
 }
 
-#sidebar h2 {
+#sidebar h1 {
     margin: 0;
     padding: 10px;
     text-align: center;
     background: #2a2a2a;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    font-size: 25px;
 }
 
 #sidebar a {
@@ -239,9 +240,9 @@ p#piece {
     margin: 5px;
     border-radius: 20px;
     border: 2px solid #030107;
-    list-style-type: none;
     background-color: rgb(255, 253, 153);
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
+    list-style-type: none;
 }
 
 .ball-place-empty {
@@ -249,10 +250,10 @@ p#piece {
     height: 45px;
     margin: 5px;
     border-radius: 20px;
-    list-style-type: none;
     background-color: rgb(255, 251, 251);
     border: 2px solid rgb(0, 0, 0);
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
+    list-style-type: none;
 }
 
 .selected {
@@ -281,6 +282,6 @@ p#piece {
     height: 45px;
     margin: 5px;
     border-radius: 20px;
-    list-style-type: none;
     border: none;
+    list-style-type: none;
 }
