@@ -1,4 +1,3 @@
-
 //#region Global variables
 var board = [
     [
@@ -75,11 +74,11 @@ var suggestions = []
 //Create an id for a peg
 //Ej: ball-5-6, position in the row is 5 and position in the column is 6
 var createId = function(rowN, colN) {
-    return "ball-" + rowN + "-" + colN
+    return 'ball-' + rowN + '-' + colN
 }
 //Get the position of the peg
 var getPositionFromId = function(id) {
-    var idParts = id && id.length ? id.split("-") : []
+    var idParts = id && id.length ? id.split('-') : []
     if (idParts.length === 3) {
         return {
             x: parseInt(idParts[1]),
@@ -102,11 +101,11 @@ var generateCell = function(cell, rowN, colN) {
     //id = location of the peg
     var html = '<button id="' + createId(rowN, colN) + '" class = "'
     if (cell && cell.value) {
-        html += "ball-place"
+        html += 'ball-place'
     } else if (cell && cell.value == 0) {
-        html += "ball-place-empty"
+        html += 'ball-place-empty'
     } else {
-        html += "no-ball"
+        html += 'no-ball'
     }
     html += '"></button>'
     return html
@@ -119,7 +118,7 @@ var generateRow = function(row, rowN) {
     for (let j = 0; j < row.length; j++) {
         html += generateCell(row[j], rowN, j)
     }
-    html += "</div>"
+    html += '</div>'
     return html
 }
 
@@ -130,7 +129,7 @@ var generateBoard = function() {
         //create the rows
         html += generateRow(board[i], i)
     }
-    html += "</div>"
+    html += '</div>'
     return html
 }
 //#endregion
@@ -139,10 +138,10 @@ var generateBoard = function() {
 var unselectedBall = function() {
     if (selectedBall.x !== undefined && selectedBall.y !== undefined) {
         var prevSelectedId = createId(selectedBall.x, selectedBall.y)
-        document.getElementById(prevSelectedId).className = "ball-place"
-        var suggestion = document.getElementsByClassName("suggestion")
+        document.getElementById(prevSelectedId).className = 'ball-place'
+        var suggestion = document.getElementsByClassName('suggestion')
         for (let i = 0; i < suggestion.length; i++) {
-            suggestion[i].className = "ball-place-empty"
+            suggestion[i].className = 'ball-place-empty'
         }
     }
 }
@@ -295,16 +294,16 @@ var moveBall = function(evt) {
     }
     if (checkResult()) {
         if (score == 310) {
-            var popup = document.getElementById("win")
-            if (popup.className == "popup-inactive") {
-                popup.className = "popup-active"
-                showPlayerRank(true, "Score:" + " " + "" + score)
+            var popup = document.getElementById('win')
+            if (popup.className == 'popup-inactive') {
+                popup.className = 'popup-active'
+                showPlayerRank(true, 'Score:' + ' ' + '' + score)
             }
         } else {
-            var popup = document.getElementById("loose")
-            if (popup.className == "popup-inactive") {
-                popup.className = "popup-active"
-                showPlayerRank(true, "Score:" + " " + "" + score)
+            var popup = document.getElementById('loose')
+            if (popup.className == 'popup-inactive') {
+                popup.className = 'popup-active'
+                showPlayerRank(true, 'Score:' + ' ' + '' + score)
             }
         }
     }
@@ -382,13 +381,13 @@ var ResetBoard = function() {
     selectedBall = { x: undefined, y: undefined }
     suggestions = []
     showPlayerRank(false)
-    var popup = document.getElementById("loose")
-    if (popup.className == "popup-active") {
-        popup.className = "popup-inactive"
+    var popup = document.getElementById('loose')
+    if (popup.className == 'popup-active') {
+        popup.className = 'popup-inactive'
     }
-    var popup = document.getElementById("win")
-    if (popup.className == "popup-active") {
-        popup.className = "popup-inactive"
+    var popup = document.getElementById('win')
+    if (popup.className == 'popup-active') {
+        popup.className = 'popup-inactive'
     }
     init()
 }
@@ -397,17 +396,17 @@ var ResetBoard = function() {
 var set = function() {
     // Local storage can't save the array so have tranform the array to string
     // string that represent the board
-    localStorage.setItem("SaveBoard", JSON.stringify(board))
-    localStorage.setItem("SavePieces", JSON.stringify(piece))
-    localStorage.setItem("SaveScore", JSON.stringify(score))
+    localStorage.setItem('SaveBoard', JSON.stringify(board))
+    localStorage.setItem('SavePieces', JSON.stringify(piece))
+    localStorage.setItem('SaveScore', JSON.stringify(score))
     init()
 }
 
 //Load
 var get = function() {
-    board = JSON.parse(localStorage.getItem("SaveBoard"))
-    piece = JSON.parse(localStorage.getItem("SavePieces"))
-    score = JSON.parse(localStorage.getItem("SaveScore"))
+    board = JSON.parse(localStorage.getItem('SaveBoard'))
+    piece = JSON.parse(localStorage.getItem('SavePieces'))
+    score = JSON.parse(localStorage.getItem('SaveScore'))
 
     init()
 }
@@ -427,14 +426,14 @@ var addBallsPlaceEmptyEventHandlers = function(ballPlaceEmpty) {
 //#endregion
 //#region Menu
 function showMenu() {
-    if (document.getElementById("button-show").onclick) {
-        document.getElementById("sidebar").style.visibility = "unset"
+    if (document.getElementById('button-show').onclick) {
+        document.getElementById('sidebar').style.visibility = 'unset'
     }
 }
 
 function closeMenu() {
-    if (document.getElementById("button-close").onclick) {
-        document.getElementById("sidebar").style.visibility = "hidden"
+    if (document.getElementById('button-close').onclick) {
+        document.getElementById('sidebar').style.visibility = 'hidden'
     }
 }
 //#endregion
@@ -442,23 +441,23 @@ function closeMenu() {
 // Show Higscores and names
 // HighScores
 var showPlayers = function() {
-    var playersRank = getElement("players")
-    playersRank.className = "diplay-block"
-    var header = getElement("players-rank-header")
-    header.innerText = "The best players..."
-    var dataPlayer = getElement("data-player")
-    dataPlayer.className = "display-none"
-    var userRank = getElement("user-rank")
-    userRank.className = "display-block"
-    var btnClose = getElement("close-rank-button")
+    var playersRank = getElement('players')
+    playersRank.className = 'diplay-block'
+    var header = getElement('players-rank-header')
+    header.innerText = 'The best players...'
+    var dataPlayer = getElement('data-player')
+    dataPlayer.className = 'display-none'
+    var userRank = getElement('user-rank')
+    userRank.className = 'display-block'
+    var btnClose = getElement('close-rank-button')
     btnClose.onclick = closePlayerRank
     userRank.innerHTML = playerScore()
 }
 var closePlayerRank = function() {
-    var playersRank = getElement("players")
-    playersRank.className = "display-none"
-    var listUsers = getElement("user-rank")
-    listUsers.className = "display-none"
+    var playersRank = getElement('players')
+    playersRank.className = 'display-none'
+    var listUsers = getElement('user-rank')
+    listUsers.className = 'display-none'
 }
 
 //Function to get date
@@ -469,24 +468,24 @@ function getDate() {
     var mm = date.getMonth() + 1
     //Puts the 0 for the numbers below 2 digits
     if (dd < 10) {
-        dd = "0" + dd
+        dd = '0' + dd
     }
     if (mm < 10) {
-        mm = "0" + mm
+        mm = '0' + mm
     }
-    var currentDay = yyyy + "-" + mm + "-" + dd
+    var currentDay = yyyy + '-' + mm + '-' + dd
     var hours = date.getHours()
     var minutes = date.getMinutes()
     var seconds = date.getSeconds()
     //Puts the 0 for the numbers below 2 digits
     if (hours < 10) {
-        hours = "0" + hours
+        hours = '0' + hours
     }
     if (minutes < 10) {
-        minutes = "0" + minutes
+        minutes = '0' + minutes
     }
     if (seconds < 10) {
-        seconds = "0" + seconds
+        seconds = '0' + seconds
     }
     return currentDay
 }
@@ -496,23 +495,23 @@ var saveScore = function(name) {
     var points = score
     var dateToday = getDate()
     //validations
-    if (name == "") {
-        alert("You must enter the name")
+    if (name == '') {
+        alert('You must enter the name')
         return {}
     }
     if (name.length < 3) {
-        alert("The name must have more than 3 characters")
+        alert('The name must have more than 3 characters')
         return {}
     }
     if (name.length > 12) {
-        alert("the name must have less than 12 characters")
+        alert('the name must have less than 12 characters')
         return {}
     }
     //Creating an array which will contain: username, points in game and date
-    if (!localStorage.getItem("playerRank")) {
-        localStorage.setItem("playerRank", "[]")
+    if (!localStorage.getItem('playerRank')) {
+        localStorage.setItem('playerRank', '[]')
     }
-    var playerRank = JSON.parse(localStorage.getItem("playerRank"))
+    var playerRank = JSON.parse(localStorage.getItem('playerRank'))
     playerRank.push({
         date: dateToday.toString(),
         name: name,
@@ -521,13 +520,13 @@ var saveScore = function(name) {
     if (playerRank.length > 15) {
         playerRank.length = 15
     }
-    localStorage.setItem("playerRank", JSON.stringify(playerRank))
+    localStorage.setItem('playerRank', JSON.stringify(playerRank))
 }
 
 var playerScore = function() {
     //Getting the array wich will represent the ranking of players
-    localStorage.getItem("playerRank")
-    var playerRank = JSON.parse(localStorage.getItem("playerRank"))
+    localStorage.getItem('playerRank')
+    var playerRank = JSON.parse(localStorage.getItem('playerRank'))
 
     playerRank.sort(function(a, b) {
         if (a.points > b.points) {
@@ -539,54 +538,54 @@ var playerScore = function() {
         return 0
     })
 
-    var listHTML = "<ul>"
+    var listHTML = '<ul>'
     for (let i = 0; i < playerRank.length; i++) {
         listHTML +=
-            "<li> " +
+            '<li> ' +
             (i + 1) +
-            "." +
-            "[" +
+            '.' +
+            '[' +
             playerRank[i].date +
-            "]" +
-            "   " +
+            ']' +
+            '   ' +
             playerRank[i].name +
-            "   " +
+            '   ' +
             playerRank[i].points +
-            " </li>"
+            ' </li>'
     }
-    listHTML += "</ul>"
+    listHTML += '</ul>'
     return listHTML
 }
 //Show and hide divs and put the players scores in the ranking
 var formEvents = function(evt) {
-    var name = document.getElementById("name")
+    var name = document.getElementById('name')
     saveScore(name.value)
-    var header = getElement("ranking-header")
-    header.innerText = "RANKING"
-    var dataPlayer = getElement("data-player")
-    dataPlayer.className = "display-none"
-    var userRank = document.getElementById("user-rank")
-    userRank.className = "display-block"
-    document.getElementById("name").value = ""
+    var header = getElement('ranking-header')
+    header.innerText = 'RANKING'
+    var dataPlayer = getElement('data-player')
+    dataPlayer.className = 'display-none'
+    var userRank = document.getElementById('user-rank')
+    userRank.className = 'display-block'
+    document.getElementById('name').value = ''
     userRank.innerHTML = playerScore()
 }
 
 //Show and hide divs
-var showPlayerRank = function(bool, message = "") {
-    var btnClose = getElement("close-rank-button")
+var showPlayerRank = function(bool, message = '') {
+    var btnClose = getElement('close-rank-button')
     btnClose.onclick = closePlayerRank
-    var playersRank = getElement("players")
-    var dataPlayer = getElement("user-data")
+    var playersRank = getElement('players')
+    var dataPlayer = getElement('user-data')
 
-    var header = getElement("players-rank-header")
+    var header = getElement('players-rank-header')
     header.innerText = message
     if (bool) {
-        dataPlayer.className = "display-block"
-        playersRank.className = "display-block"
-        var submit = document.getElementById("submit")
+        dataPlayer.className = 'display-block'
+        playersRank.className = 'display-block'
+        var submit = document.getElementById('submit')
         submit.onclick = formEvents
     } else {
-        playersRank.className = "display-none"
+        playersRank.className = 'display-none'
     }
 }
 
@@ -595,26 +594,26 @@ var showPlayerRank = function(bool, message = "") {
 //Initialize game
 var init = function() {
     // get the board
-    var boardElement = document.getElementById("board")
+    var boardElement = document.getElementById('board')
     //Asign dynamicBoard
     boardElement.innerHTML = generateBoard()
 
-    var ball = boardElement.getElementsByClassName("ball-place")
+    var ball = boardElement.getElementsByClassName('ball-place')
     addBallsEventHandlers(ball)
 
-    var ballPlaceEmpty = boardElement.getElementsByClassName("ball-place-empty")
+    var ballPlaceEmpty = boardElement.getElementsByClassName('ball-place-empty')
     addBallsPlaceEmptyEventHandlers(ballPlaceEmpty)
 
     //Text content for show the score and pieces
-    document.getElementById("piece").textContent = "Piece:" + " " + piece
-    document.getElementById("score").textContent = "Score:" + " " + score
-    document.getElementById("reset").onclick = ResetBoard
-    document.getElementById("load").onclick = get
-    document.getElementById("button-close").onclick = closeMenu
-    document.getElementById("button-show").onclick = showMenu
-    document.getElementById("save-game").onclick = set
-    document.getElementById("high-score").onclick = showPlayers
-    document.getElementById("reset")
+    document.getElementById('piece').textContent = 'Piece:' + ' ' + piece
+    document.getElementById('score').textContent = 'Score:' + ' ' + score
+    document.getElementById('reset').onclick = ResetBoard
+    document.getElementById('load').onclick = get
+    document.getElementById('button-close').onclick = closeMenu
+    document.getElementById('button-show').onclick = showMenu
+    document.getElementById('save-game').onclick = set
+    document.getElementById('high-score').onclick = showPlayers
+    document.getElementById('reset')
 }
 window.onload = init
 //#endregion
