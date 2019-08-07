@@ -1,4 +1,4 @@
-"use strict";
+
 //#region Global variables
 var board = [
     [
