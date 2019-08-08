@@ -504,7 +504,7 @@ var saveScore = function(name) {
         return {}
     }
     if (name.length > 12) {
-        alert('the name must have less than 12 characters')
+        alert('The name must have less than 12 characters')
         return {}
     }
     //Creating an array which will contain: username, points in game and date
@@ -561,7 +561,7 @@ var formEvents = function(evt) {
     var name = document.getElementById('name')
     saveScore(name.value)
     var header = getElement('ranking-header')
-    header.innerText = 'RANKING'
+    header.innerText = 'Rank of players'
     var dataPlayer = getElement('data-player')
     dataPlayer.className = 'display-none'
     var userRank = document.getElementById('user-rank')
